@@ -6,8 +6,8 @@ public class HeroStackController : MonoBehaviour
 {
     public List<GameObject> BlockList = new List<GameObject>();
     private GameObject _lastBlockObject;
-    public UnityEvent UnituEvent;
-    public GameObject CollectedCubeText;
+    [SerializeField] private GameObject _collectedCubeText;
+    [SerializeField] private UnityEvent UnituEvent;
     private void Start()
     {
         UpdateLastBlockObject();
@@ -36,10 +36,10 @@ public class HeroStackController : MonoBehaviour
     }
     public void SetCollectedCubeText()
     {
-        Instantiate(CollectedCubeText, new Vector3(transform.position.x, transform.position.y + 3, transform.position.z), Quaternion.identity);
+        Instantiate(_collectedCubeText, new Vector3(transform.position.x, transform.position.y + 3, transform.position.z), Quaternion.identity);
     }
     public void InitializedStackControllerByCube()
     {
-        EventManager.DoStack(this);
+        GameManager.DoStack(this);
     }
 }

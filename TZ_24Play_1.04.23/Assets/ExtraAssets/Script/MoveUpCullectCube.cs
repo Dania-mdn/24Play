@@ -5,6 +5,7 @@ public class MoveUpCullectCube : MonoBehaviour
 {
     [Range(2, 5)]
     [SerializeField] private float _duration = 3;
+
     [Range(2, 6)]
     [SerializeField] private float _height = 4;
     void Start()

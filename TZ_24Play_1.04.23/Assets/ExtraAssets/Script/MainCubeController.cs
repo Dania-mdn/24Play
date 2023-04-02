@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainCubeController : MonoBehaviour
 {
-    public Regdoll Regdoll;
+    [SerializeField] private Regdoll _regdoll;
     private Vector3 _direction = Vector3.forward;
     private RaycastHit hit;
     private Vector3[] _StartPositionForRaycast = new Vector3[2];
@@ -15,10 +13,9 @@ public class MainCubeController : MonoBehaviour
         _StartPositionForRaycast[0] = transform.position + new Vector3(halfsize, halfsize);
         _StartPositionForRaycast[1] = transform.position + new Vector3(-halfsize, halfsize);
     }
-    private void FixedUpdate()
-    {
-        SetCubeRaycast();
-    }
+
+    private void FixedUpdate() => SetCubeRaycast();
+
     private void SetCubeRaycast()
     {
         if (_isEnd) return;
@@ -31,7 +28,7 @@ public class MainCubeController : MonoBehaviour
             {
                 if (hit.transform.CompareTag("CubeWall"))
                 {
-                    Regdoll.DisableKinematicInChildren();
+                    _regdoll.DisableKinematicInChildren();
                     _isEnd = transform;
                 }
             }

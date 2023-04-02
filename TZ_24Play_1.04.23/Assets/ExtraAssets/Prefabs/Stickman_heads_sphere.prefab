@@ -1861,6 +1861,7 @@ GameObject:
   - component: {fileID: 1956658119538964579}
   - component: {fileID: 1095577067432771557}
   - component: {fileID: 7526264990527161519}
+  - component: {fileID: 2739260880696530309}
   m_Layer: 0
   m_Name: calf_r
   m_TagString: Untagged
@@ -1960,3 +1961,16 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2739260880696530309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592876449704463870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17216b06c0b65ec4fbc0fa61de611fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManager: {fileID: 0}

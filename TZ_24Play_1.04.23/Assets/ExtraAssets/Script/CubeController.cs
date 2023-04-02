@@ -6,14 +6,16 @@ public class CubeController : MonoBehaviour
     private Vector3 _direction = Vector3.back;
     private bool _isStac = false;
     private RaycastHit hit;
+    private RaycastHit hitUp;
     private Vector3[] _StartPositionForRaycast = new Vector3[2];
+
     private void OnEnable()
     {
-        EventManager.NewGameobjectStack += InitializeHerrostackController;
+        GameManager.InitializeHeroController += InitializeHerrostackController;
     }
     private void OnDisable()
     {
-        EventManager.NewGameobjectStack -= InitializeHerrostackController;
+        GameManager.InitializeHeroController -= InitializeHerrostackController;
     }
     private void CheacPositionRaycast()
     {
